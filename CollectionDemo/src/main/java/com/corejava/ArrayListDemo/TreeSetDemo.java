@@ -17,6 +17,7 @@ public class TreeSetDemo{
         ts1.add("A"); 
         ts1.add("B"); 
         ts1.add("C"); 
+       
         try {
         	ts1.add(null);
 		} catch (Exception e) {

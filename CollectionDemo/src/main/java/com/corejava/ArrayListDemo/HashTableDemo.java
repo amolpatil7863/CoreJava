@@ -10,13 +10,17 @@ public class HashTableDemo {
 	public static void main(String[] args) {
 		Hashtable<String, Integer> hashTable=new Hashtable<String, Integer>();
 		hashTable.put("one", 1);
-//		hashTable.put(null,2);
-		hashTable.put("one", 2);
-		System.out.println(hashTable.get("one"));
-	    /*Enumeration<String> enumeration = hashTable.get(one);
-	    while (enumeration.hasMoreElements()) {
-			System.out.println(enumeration.nextElement());
+//		hashTable.put(null,7);
+		hashTable.put("two", 2);
+//		hashTable.put("two", 3);
+		/*try{
+		hashTable.put("three", null);
+		
+		}catch (NullPointerException e) {
+			// TODO: handle exception
+			System.out.println(e);
 		}*/
+		System.out.println(hashTable);
 	}
 
 }

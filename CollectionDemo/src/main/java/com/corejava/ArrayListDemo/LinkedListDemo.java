@@ -16,6 +16,9 @@ public class LinkedListDemo {
 		}
 		long endTime=System.currentTimeMillis();
 		System.out.println("Time Taken :-"+(endTime-statTime));
+		
+		
+//		list.get(3)
 	}
 
 }

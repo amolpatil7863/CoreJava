@@ -9,18 +9,27 @@ public class TreeMapDemo {
 	}
 
 	public static void main(String[] args) {
-		TreeMap<String, Integer> treeMap=new TreeMap<String, Integer>();
-		treeMap.put("k", 4);
-		treeMap.put("one", 1);
-		treeMap.put("two", 1);
-		treeMap.put("three", 1);
-		treeMap.put("ke", 4);
-		treeMap.put("a", 4);
-//		treeMap.put(null, 1);
-		
-		
+		TreeMap<Integer,String> treeMap=new TreeMap<Integer,String>();
+		treeMap.put(1, "one");
+		treeMap.put(5, "five");
+		treeMap.put(3, "three");
+		treeMap.put(2, "two");
+		treeMap.put(4, "four");
 		
 		System.out.println(treeMap);
+		
+/*//		System.out.println(treeMap);
+		TreeMap<Employee, Integer> treeMap1=new TreeMap<Employee, Integer>(new EmployeeClassComp());
+		
+		treeMap1.put(new Employee("amol", 1, "pune"), 1);
+		treeMap1.put(new Employee("amol", 2, "pune"), 1);
+		treeMap1.put(new Employee("amol", 3, "pune"), 1);
+		treeMap1.put(new Employee("amol", 6, "pune"), 1);
+		Employee e=null;*/
+		
+				
+//		System.out.println(treeMap1);
 	}
-
+	
+//Comparable<T>
 }

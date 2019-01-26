@@ -1,8 +1,6 @@
 package com.corejava.ArrayListDemo;
 
 import java.util.ArrayList;
-import java.util.Comparator;
-import java.util.HashSet;
 import java.util.Iterator;
 import java.util.ListIterator;
 
@@ -24,24 +22,23 @@ public class ArrayListDemo {
 //			System.out.println(employee);
 		}
 		long eTime=System.currentTimeMillis();
-		System.out.println("USIN LOOP:"+(eTime-sTime));
-//		System.out.println(":::"+list.get(7));
-		
-//		HashSet<E>
+//		System.out.println("USIN LOOP:"+(eTime-sTime));
+
 		
 		long sTime1=System.currentTimeMillis();
-		Iterator iterator = list.iterator();
+		Iterator<Employee> iterator = list.iterator();
 		while (iterator.hasNext()) {
 		iterator.next();
 			
 		}
 		long eTime1=System.currentTimeMillis();
-		System.out.println("USIN Iterator:"+(eTime1-sTime1));
+		System.out.println("USING Iterator:"+(eTime1-sTime1));
 		
-		 ListIterator iterator1 = list.listIterator(); 
+		 ListIterator<Employee> iterator1 = list.listIterator(); 
 		 
+		 while(iterator1.hasPrevious()) {
+			 System.out.println("Using ListIterator:- "+ iterator1.previous());
+		 }
 
-//		Comparable<T>
-//		Comparator<T>
 	}
 }

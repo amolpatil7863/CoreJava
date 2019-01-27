@@ -4,7 +4,6 @@ import java.util.HashMap;
 import java.util.Iterator;
 import java.util.Map;
 import java.util.Map.Entry;
-import java.util.Set;
 
 public class HashMapDemo {
 
@@ -15,17 +14,20 @@ public class HashMapDemo {
 		HashMap<String, Integer> map = new HashMap<String, Integer>(); 
         
 //        print(map); 
-        map.put("vishal", 10); 
+        map.put("vishal", 14); 
         map.put("sachin", 30); 
         map.put("vaibhav", 20); 
-        map.put("vaibhav", 70); 
+        map.put("steve", 10); 
+        map.put("steve", 10); 
         map.put(null, null);
         map.put(null, 9);  
         map.put(null, 9);
         map.put(null, 9); 
         map.put(null, 9); 
         System.out.println("Size of map is:- " + map.size()); 
-        System.out.println(map);
+        
+        
+        System.out.println("HashMap:- "+map);
       
       
         Iterator<Entry<String, Integer>> it = map.entrySet().iterator();

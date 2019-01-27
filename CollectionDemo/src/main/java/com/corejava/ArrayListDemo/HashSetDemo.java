@@ -25,19 +25,14 @@ public class HashSetDemo {
 	public static void main(String[] args) {
 		HashSet<String> hashSet=new HashSet<String>();
 		
-		System.out.println(hashSet.add("amol"));
-		System.out.println(hashSet.add("amol"));
-		System.out.println(hashSet.add("amol"));
-		System.out.println(hashSet.add("amol"));
+		hashSet.add("amol");
+		hashSet.add("tanaji");
+		hashSet.add("Tl");
+		hashSet.add("Kp");
+
 		
 		
-		System.out.println(hashSet.add(null));
-		System.out.println(hashSet.add(null));
-		System.out.println(hashSet.add(null));
-		System.out.println(hashSet.add(null));
-		
-		
-		
+		System.out.println("HashSet:-"+hashSet);
 		
 	    Set<String> lhset = new HashSet<String>();
 

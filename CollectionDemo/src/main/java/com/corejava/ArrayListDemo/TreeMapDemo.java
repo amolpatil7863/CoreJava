@@ -15,7 +15,7 @@ public class TreeMapDemo {
 		treeMap.put(3, "three");
 		treeMap.put(2, "two");
 		treeMap.put(4, "four");
-		
+		treeMap.put(1, "sdivn");
 		System.out.println(treeMap);
 		
 /*//		System.out.println(treeMap);

@@ -12,7 +12,7 @@ public class HashTableDemo {
 		hashTable.put("one", 1);
 //		hashTable.put(null,7);
 		hashTable.put("two", 2);
-//		hashTable.put("two", 3);
+		hashTable.put("two", 3);
 		/*try{
 		hashTable.put("three", null);
 		
@@ -21,6 +21,9 @@ public class HashTableDemo {
 			System.out.println(e);
 		}*/
 		System.out.println(hashTable);
+		
+	
+		
 	}
 
 }

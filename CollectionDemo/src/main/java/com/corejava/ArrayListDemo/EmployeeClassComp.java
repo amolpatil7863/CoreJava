@@ -18,7 +18,11 @@ public class EmployeeClassComp implements Comparator<Employee> {
 			return 0;
 		}
 		
+//		System.gc();
+		
 //		return 0;
 	}
-
+//Comparable<T>
+	
+	
 }

@@ -33,7 +33,7 @@ public class PrioriyQueueExample {
 //	      System.out.println(q.poll());
 	      System.out.println("Size:- "+q.size());
 	     
-	      
+	      System.out.println("Priority Queue:-");
 	      Queue<Integer> q3 = new PriorityQueue<Integer>(); 
 	      q3.add(2);
 	      q3.add(5);
@@ -41,6 +41,7 @@ public class PrioriyQueueExample {
 	      q3.add(1);
 	      q3.add(7);
 	      q3.add(8);
+	      q3.add(null);
 	     System.out.println(q3);
 	}
 

@@ -10,23 +10,32 @@ import java.io.ObjectOutputStream;
 By data I mean objects and not text.Now the problem is your Network infrastructure and your Hard disk 
 are hardware components that understand bits and bytes but not JAVA objects.*/
 
-
 public class SerializationDemo {
+	final static String filepath = "C:\\Amol\\CoreJava\\SerializationExample\\test.txt";
 	public static void main(String[] args) {
 		FileOutputStream fileStream = null;
 		Student student = null;
 		ObjectOutputStream objectOut = null;
+		File file=null;
+		
 		try {
-			String filepath = "/media/amol/Education/Java/GIT/Core Java/CoreJava/test.txt";
-			File file = new File(filepath); // this will create file
+//			String filepath = "/media/amol/Education/Java/GIT/Core Java/CoreJava/test.txt";
+			
+			 file = new File(filepath); // this will create file
 			if (file.exists()) {
 				System.out.println("exist");
 			} else {
 				file.createNewFile();
 			}
-			fileStream = new FileOutputStream(file); // this will write bytestream to file
-			objectOut = new ObjectOutputStream(fileStream); // this will write object to file
+			fileStream = new FileOutputStream(file); // this will write
+														// bytestream to file
+			objectOut = new ObjectOutputStream(fileStream); // this will write
+										// object to file
 			student = new Student("Amol", "Patil", 24);
+			/*student=new Student();
+			student.setFirstName("Amol");
+			student.setLastName("Pail");
+			student.setAge(20);*/
 			System.out.println("Writing object to file");
 			objectOut.writeObject(student);
 			System.out.println("The Object  was succesfully written to a file");

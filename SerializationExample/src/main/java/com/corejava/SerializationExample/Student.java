@@ -15,7 +15,7 @@ public class Student implements Serializable {
 
 
 	/**
-	 * 
+	 * genarated serialVersion id
 	 */
 	private static final long serialVersionUID = 9088627604768911860L;	//we must provide generated serial version oid
 	private String first_name;

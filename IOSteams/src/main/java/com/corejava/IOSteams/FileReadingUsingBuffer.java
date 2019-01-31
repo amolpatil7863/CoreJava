@@ -17,10 +17,9 @@ public class FileReadingUsingBuffer {
 			fileReader = new FileReader(file);
 			bufferedReader = new BufferedReader(fileReader);
 
-			String s = bufferedReader.readLine();
-//			System.out.println("sssss:-- " + s);
-			while (s != null) {
-				System.out.println("sssss:-- " + s);
+			String s;
+			while ((s = bufferedReader.readLine()) != null) {
+				System.out.println("Data " + s);
 			}
 			System.out.println();
 		} catch (FileNotFoundException e) {

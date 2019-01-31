@@ -16,18 +16,28 @@ public class FileReaderAndFileWriter {
 		try {
 			file = new File("C:\\Amol\\task.txt");
 			file1 = new File("C:\\Amol\\task1.txt");
-			fileReader = new FileReader(file);
+			fileReader = new FileReader(file);         //read character from byte streAm
 			if (!file1.exists()) {
 				file1.createNewFile();
 			}
 			fileWriter = new FileWriter(file1);
-
-			int i;
-			while ((i = fileReader.read()) != -1) {
-				System.out.println(fileReader.read());
-				fileWriter.write(fileReader.read());
-
-			}
+//			System.out.println("--------------------------------------"+fileReader.getEncoding());
+//			System.out.println("--------------------------------------"+fileReader.read());
+			
+			 int i;    
+//	          while(( i=fileReader.read())!=-1)  {  
+//				System.out.println("--------------------------------------"+(char)fileReader.read());
+//				System.out.println(fileReader.read());
+//				fileWriter.write(fileReader.read());
+//
+//			}
+	          
+	          while ((i=fileReader.read()) != -1) {
+					System.out.println("Data " + i);
+//					fileWriter.write(i);
+				}  
+	          
+	          
 			fileReader.read();
 
 		} catch (FileNotFoundException e) {

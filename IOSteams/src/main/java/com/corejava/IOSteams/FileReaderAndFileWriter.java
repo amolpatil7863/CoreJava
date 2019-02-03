@@ -14,8 +14,15 @@ public class FileReaderAndFileWriter {
 		FileReader fileReader = null;
 		FileWriter fileWriter = null;
 		try {
-			file = new File("C:\\Amol\\task.txt");
-			file1 = new File("C:\\Amol\\task1.txt");
+//			file = new File("C:\\Amol\\task.txt");
+			file=new File("/media/amol/Education/MyLaptopConfiguration.txt");
+			
+			String str="amol";
+			
+			System.out.println("bytes :-"+str.getBytes("UTF-16"));
+			
+//			file1 = new File("C:\\Amol\\task1.txt");
+			file1=new File("/media/amol/Education/newone.txt");
 			fileReader = new FileReader(file);         //read character from byte streAm
 			if (!file1.exists()) {
 				file1.createNewFile();
@@ -24,7 +31,12 @@ public class FileReaderAndFileWriter {
 //			System.out.println("--------------------------------------"+fileReader.getEncoding());
 //			System.out.println("--------------------------------------"+fileReader.read());
 			
-			 int i;    
+			 int i;  
+			 while ((i=fileReader.read()) != -1) {
+				 System.out.println("g");
+					System.out.println("Data " + i);
+					fileWriter.write(i);
+				} 
 //	          while(( i=fileReader.read())!=-1)  {  
 //				System.out.println("--------------------------------------"+(char)fileReader.read());
 //				System.out.println(fileReader.read());
@@ -32,10 +44,7 @@ public class FileReaderAndFileWriter {
 //
 //			}
 	          
-	          while ((i=fileReader.read()) != -1) {
-					System.out.println("Data " + i);
-//					fileWriter.write(i);
-				}  
+	           
 	          
 	          
 			fileReader.read();

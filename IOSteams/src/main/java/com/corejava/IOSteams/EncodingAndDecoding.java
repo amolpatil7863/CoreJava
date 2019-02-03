@@ -22,7 +22,7 @@ public class EncodingAndDecoding {
 		try{
 		
 				//encode image to Base64 String
-				 f = new File("C:\\Users\\HP\\Desktop\\Track.jpg");		//change path of image according to you
+				 f = new File("/media/amol/Entertainment/Images/amol.jpg");		//change path of image according to you
 				 fis = new FileInputStream(f);
 				byte byteArray[] = new byte[(int)f.length()];
 				fis.read(byteArray);
@@ -31,7 +31,7 @@ public class EncodingAndDecoding {
 				System.out.println("-----------------"+imageString);
 				
 				//decode Base64 String to image
-				 fos = new FileOutputStream("C:\\Users\\HP\\Desktop\\Track7.jpg"); //change path of image according to you
+				 fos = new FileOutputStream("/home/new.jpg"); //change path of image according to you
 				byteArray =  Base64.getDecoder().decode(imageString);
 				fos.write(byteArray);
 		 System.out.println("Image Decodded");

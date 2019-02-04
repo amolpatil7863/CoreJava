@@ -2,7 +2,6 @@ package com.servlet;
 
 import java.io.IOException;
 import java.io.PrintWriter;
-
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletContext;
 import javax.servlet.ServletException;
@@ -20,13 +19,13 @@ public class LoginServlet extends HttpServlet {
 	public static final String userName="amol";
 	public static final String password="amol@123";
 	RequestDispatcher requestDispacher=null;
-	
+	HttpSession session=null;
 	public void init() {
 		System.out.println("serialVersionUID:-   "+serialVersionUID+"aa"+a);
 		
 		
 		ServletContext context=getServletContext();
-		System.out.println("Contect:---"+context);
+		System.out.println("Context:---"+context);
 	}
 	
 	
@@ -35,15 +34,27 @@ public class LoginServlet extends HttpServlet {
      */
     public LoginServlet() {
         super();
-        // TODO Auto-generated constructor stub
     }
 
 	/**
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
-		response.getWriter().append("Served at: ").append(request.getContextPath());
+		HttpSession currentSession=request.getSession();	
+		String name=(String) currentSession.getAttribute("username");
+		System.out.println("CurrentSession:- "+name);		
+		if(name!=null){
+			System.out.println("Session was maintained");
+			requestDispacher=getServletContext().getRequestDispatcher("/welcome.jsp");
+			requestDispacher.forward(request, response);
+		}else{
+			System.out.println("Please Login");
+			 requestDispacher = getServletContext().getRequestDispatcher("/index.jsp");
+//			 PrintWriter out= response.getWriter();
+//			 out.println("<font color=red>Either user name or password is wrong.</font>");
+		     requestDispacher.include(request, response);
+		     
+		}
 	}
 
 	/**
@@ -51,15 +62,21 @@ public class LoginServlet extends HttpServlet {
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
+		
+		/*ClassLoader classloader = Thread.currentThread().getContextClassLoader();
+		System.out.println("classloader- "+ classloader.getClass());
+		*/
+		
 		if(request.getParameter("userName").equals("amol") && request.getParameter("password").equals("amol@123")) {
 			HttpSession httpSeesion=request.getSession();
 			
 			System.out.println("sessionID:--"+ httpSeesion.getId());
 			httpSeesion.setAttribute("username", request.getParameter("userName"));
+			System.out.println("--------------------Session Created---------------------");
+//			httpSeesion.setAttribute("loginStatus", true);
 			try {
 				requestDispacher=getServletContext().getRequestDispatcher("/welcome.jsp");
 				requestDispacher.forward(request, response);
-//			response.sendRedirect("/welcome.jsp");
 			}catch (Exception e) {
 				e.printStackTrace();
 			}
